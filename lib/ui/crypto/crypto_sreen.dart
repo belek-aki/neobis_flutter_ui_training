@@ -37,13 +37,19 @@ class _ScreenCryptoState extends State<ScreenCrypto> {
                 ),
               ),
             ),
-            ListView.separated(
-                shrinkWrap: true,
-                itemBuilder: (context, index) => ListElements(
-                      data: cryptoElement[index],
-                    ),
-                separatorBuilder: (context, index) => const Divider(),
-                itemCount: cryptoElement.length)
+            Container(
+              child: ListView.separated(
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) => ListElements(
+                        data: cryptoElement[index],
+                      ),
+                  separatorBuilder: (context, index) => Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: kDefaultPadding * 1.2),
+                        child: Divider(),
+                      ),
+                  itemCount: cryptoElement.length),
+            )
           ],
         ),
       ),
