@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:neobis_ui_training/constants.dart';
 import 'package:neobis_ui_training/ui/crypto/crypto_sreen.dart';
 import 'package:neobis_ui_training/ui/finance/finance_screen.dart';
+import 'package:neobis_ui_training/ui/travel/travel_screen.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -43,7 +44,12 @@ class HomePage extends StatelessWidget {
             Container(
               width: kDefaultPadding * 10,
               child: ElevatedButton(
-                onPressed: () => {},
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TravelSreen(),
+                  ),
+                ),
                 child: Text('Travel page'),
               ),
             ),
